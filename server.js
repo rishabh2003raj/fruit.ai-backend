@@ -6,9 +6,13 @@ const port = 3000;
 const cors = require('cors');
 
 app.use(cors());
+const allowedOrigins = [
+    'http://localhost:3001', // For local development
+    'https://fruit-ai-frontend-ej7n.onrender.com' // For the deployed frontend
+];
 const corsOptions = {
-    origin: 'http://localhost:3001',  // Allow only this origin
-    methods: 'GET,POST,PUT,DELETE',   // Define allowed methods
+    origin: 'https://fruit-ai-frontend-ej7n.onrender.com', // Allow only your Render frontend
+    methods: 'GET,POST,PUT,DELETE', // Allowed HTTP methods
 };
   
 app.use(cors(corsOptions));
