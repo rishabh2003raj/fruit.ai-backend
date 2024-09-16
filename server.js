@@ -4,7 +4,15 @@ const app = express();
 const port = 3000;
 
 const cors = require('cors');
+
 app.use(cors());
+const corsOptions = {
+    origin: 'http://localhost:3001',  // Allow only this origin
+    methods: 'GET,POST,PUT,DELETE',   // Define allowed methods
+};
+  
+app.use(cors(corsOptions));
+  
 
 app.use(express.json()); 
 mongoose.connect('mongodb://127.0.0.1:27017/Faqdb')
